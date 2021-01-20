@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link rel="icon" type="image/x-icon" href="images/bitbug_favicon.ico">
+<link href='http://fonts.googleapis.com/css?family=Arizonia' rel='stylesheet' type='text/css'>
+<head>
+    <meta charset="UTF-8">
+    <title>update</title>
+    <link rel="stylesheet" type="text/css" href="/Blog/css/Login.css"/>
+    <script src="/Blog/js/jquery-3.4.1.js"></script>
+    <script src="/Blog/js/registered.js"></script>
+</head>
+<body>
+<div id="login">
+    <h1>Login</h1>
+    <form action="/Blog/admin/update" method="post">
+        <p style="color: #00c4ff"> 用户名:</p>
+        <input th:value="${admin.getId()}" type="hidden" name = "id">
+        <input th:value="${admin.getUsername()}" id="username" type="text" required="required" placeholder="用户名" name="username"></input>
+        <p id="count" style="display: none;color:orangered">改账号已经被人使用了请换一个</p>
+        <p style="color: #00c4ff"> 密码:</p>
+        <input th:value="${admin.getPassword()}"  id="password" type="password" required="required" placeholder="密码" name="password"></input>
+        <button class="but" type="submit">修改</button>
+    </form>
+
+</div>
+</body>
+</html>

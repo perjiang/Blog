@@ -1,0 +1,42 @@
+server:
+  port: 2000
+  servlet:
+    context-path: /Blog
+spring:
+  application:
+    name: blogs
+  datasource:
+    name: mydb
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://******/blogs?serverTimezone=UTC&useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username:
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+  redis:
+    host:
+    port:
+    connect-timeout: 5000
+    password:
+    lettuce:
+      pool:
+        max-active: 8
+
+
+mybatis:
+  mapper-locations: classpath*:/mybatis/mapper/*Mapper.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
+
+aliyun:
+  oss:
+    access-key-id:
+    access-key-secret:
+    bucket-domain:
+    bucket-name:
+    end-point:

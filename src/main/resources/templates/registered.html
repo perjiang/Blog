@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link rel="icon" type="image/x-icon" href="images/bitbug_favicon.ico">
+<link href='http://fonts.googleapis.com/css?family=Arizonia' rel='stylesheet' type='text/css'>
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="css/Login.css"/>
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="js/registered.js"></script>
+    <header>
+        <h1><a href="index.html">perjson</a></h1>
+        <p>原以为撑不过去的日子,现在都已解决回不去了.........</p>
+    </header>
+</head>
+<body>
+<div id="login">
+    <h1>Login</h1>
+    <span style="color: red" id="error"></span></br>
+    <span id="ok" style="display: none">注册成功去<a href="admin">登录</a></span>
+
+       <p style="color: #00c4ff"> 用户名:</p>
+        <input id="username" type="text" required="required" placeholder="用户名" name="username"></input>
+        <p id="count" style="display: none;color:orangered">改账号已经被人使用了请换一个</p>
+        <p style="color: #00c4ff"> 密码:</p>
+        <input id="password" type="password" required="required" placeholder="密码" name="password"></input>
+        <p style="color: #00c4ff"> 邀请码:</p>
+        <input id="inviteCode" type="password" required="required" placeholder="找管理员要" name="InviteCode"></input>
+        <p style="color: #00c4ff"> </p>
+        <button class="but" type="submit" id="bt">注册</button>
+
+
+    <div>
+        <p style="color: red;text-align: center"><a href="admin" style="color: red">去登录</a></p>
+    </div>
+</div>
+</body>
+</html>

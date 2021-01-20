@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jx.blog.Dao.RoleDao">
+
+    <select id="selectRoleByAdminId" resultType="com.jx.blog.entity.Role">
+        SELECT * from role where id in (SELECT role_id from admin_role where admin_id = #{id})
+    </select>
+    <select id="selectOhterRole" resultType="com.jx.blog.entity.Role">
+        select * from role where rolename = 'other'
+    </select>
+</mapper>

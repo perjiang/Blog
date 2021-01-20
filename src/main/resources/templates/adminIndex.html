@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>perjson</title>
+    <link rel="icon" type="image/x-icon" href="/Blog/images/bitbug_favicon.ico">
+    <link href="/Blog/css/index.css" rel="stylesheet">
+    <link href="/Blog/css/admin.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Arizonia' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<header>
+    <h1><a href="/Blog/index.html">perjson</a></h1>
+    <p>原以为撑不过去的日子,现在都已解决回不去了.........</p>
+</header>
+<div id="nav">
+    <ul>
+        <li id="userMananger"><a href="#" >用户管理</a></li>
+        <li><a href="#">新建标签</a></li>
+        <li><a href="#">发布博客</a></li>
+        <li><a href="#">管理博客</a></li>
+        <li><a href="/Blog/logout">退出登录</a></li>
+        sdfdsfsd
+
+    </ul>
+    <script src="/Blog/js/silder.js"></script><!--获取当前页导航 高亮显示标题-->
+</div>
+
+<div id="content">
+    <p style="font-size: 30px;color: #00c4ff">现有用户</p>
+    <table id="allUser" border=1 style="margin:auto;font-size: 16px;border-spacing: 0;border-collapse: collapse;">
+        <thead>
+            <tr >
+                <th style="width: 150px">编号</th>
+                <th style="width: 150px">用户名</th>
+                <th style="width: 150px">修改</th>
+                <th style="width: 150px">删除</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+
+        </tbody>
+    </table>
+</div>
+
+<div id="copright"> <a href="https://github.com/perjiang" target="_blank">talk is cheap, show me the code</a></div>
+<script src="/Blog/js/jquery-3.4.1.js"></script>
+<script src="/Blog/js/admin.js"></script>
+</body>
+</html>

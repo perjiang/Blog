@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link rel="icon" type="image/x-icon" href="/Blog/images/bitbug_favicon.ico">
+<link href='http://fonts.googleapis.com/css?family=Arizonia' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="css/Login.css"/>
+<meta charset="UTF-8">
+<title>Login</title>
+<head>
+    <header>
+        <h1><a href="index.html">perjson</a></h1>
+        <p>原以为撑不过去的日子,现在都已解决回不去了.........</p>
+    </header>
+</head>
+<body>
+<div id="login">
+    <h1>Login</h1>
+    <form method="post" action="login">
+        <span th:text="${msg}" style="color: red"></span>
+        <input type="text" required="required" placeholder="用户名" name="username"></input>
+        <input type="password" required="required" placeholder="密码" name="password"></input>
+        <button class="but" type="submit">登录</button>
+    </form>
+
+    <div>
+        <p style="color: #00c4ff">还没有账号？<a href="registered">立即注册</a></p>
+    </div>
+</div>
+</body>
+</html>

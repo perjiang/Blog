@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jx.blog.Dao.AdminDao">
+    <resultMap id="adminMap" type="com.jx.blog.entity.Admin">
+        <id column="id" property="id"></id>
+        <result column="username" property="username"></result>
+        <result column="password" property="password"></result>
+        <result column="salt" property="salt"></result>
+    </resultMap>
+
+    <resultMap id="adminAllMap" type="com.jx.blog.entity.Admin" extends="adminMap">
+        <collection property="roles"
+                    ofType="com.jx.blog.entity.Role"
+                    column="id"
+                    select="com.jx.blog.Dao.RoleDao.selectRoleByAdminId"
+        ></collection>
+    </resultMap>
+
+    <insert id="add" parameterType="com.jx.blog.entity.Admin" useGeneratedKeys="true" keyProperty="id">
+        INSERT into admin (username,password,salt) values (#{username},#{password},#{salt})
+    </insert>
+    <insert id="addRole" parameterType="int">
+        insert into admin_role(admin_id,role_id) values (#{param1},#{param2});
+    </insert>
+    <update id="update">
+        update admin set username = #{username},password = #{password},salt = #{salt} where id = #{id}
+    </update>
+    <delete id="deleteById">
+        delete  from admin where id = #{id}
+    </delete>
+    <delete id="deleteAdminRole">
+        delete from admin_role where admin_id = #{id}
+    </delete>
+
+    <select id="selectAll" resultMap="adminAllMap">
+        select * from admin where username = #{username}
+  </select>
+    <select id="selectAdminByName" resultMap="adminMap">
+        select * from admin where username = #{username}
+    </select>
+    <select id="showAllUser" resultMap="adminMap">
+        select id,username from admin order by id
+    </select>
+    <select id="getUserNum" resultType="java.lang.Integer">
+        select count(*) from admin where username = #{username}
+    </select>
+    <select id="selectById" resultMap="adminMap" parameterType="int">
+        select * from admin where id = #{id}
+    </select>
+</mapper>
