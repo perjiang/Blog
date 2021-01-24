@@ -115,12 +115,12 @@ public class ShiroConfig {
      */
     @Bean
     public ShiroFilterFactoryBean shiroFilterFactoryBean(DefaultWebSecurityManager securityManager){
-
         ShiroFilterFactoryBean filter = new ShiroFilterFactoryBean();
         filter.setSecurityManager(securityManager);
         filter.setLoginUrl("/admin");
         filter.setUnauthorizedUrl("/");
         Map<String,String> map = new HashMap<>();
+        map.put("/admin.html", "authc");
         filter.setFilterChainDefinitionMap(map);
         return filter;
     }
